@@ -34,6 +34,29 @@
       }
     ],
     "inferenceConfig": {},
+    "toolConfig": {
+      "tools": [
+        {
+          "toolSpec": {
+            "name": "fixture_echo",
+            "description": "Echo text for the parity fixture.",
+            "inputSchema": {
+              "json": {
+                "type": "object",
+                "required": [
+                  "text"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "additionalModelRequestFields": {
       "thinking": {
         "type": "adaptive",

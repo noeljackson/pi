@@ -29,6 +29,27 @@
           "role": "user",
           "content": "hello"
         }
+      ],
+      "tools": [
+        {
+          "type": "function",
+          "function": {
+            "name": "fixture_echo",
+            "description": "Echo text for the parity fixture.",
+            "strict": false,
+            "parameters": {
+              "type": "object",
+              "required": [
+                "text"
+              ],
+              "properties": {
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
       ]
     }
   }

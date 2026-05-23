@@ -52,6 +52,27 @@
           }
         }
       ],
+      "tools": [
+        {
+          "name": "fixture_echo",
+          "description": "Echo text for the parity fixture.",
+          "eager_input_streaming": true,
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text"
+            ]
+          },
+          "cache_control": {
+            "type": "ephemeral"
+          }
+        }
+      ],
       "thinking": {
         "type": "disabled"
       }
