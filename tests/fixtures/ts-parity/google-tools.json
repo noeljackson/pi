@@ -34,6 +34,27 @@
         ],
         "role": "user"
       },
+      "tools": [
+        {
+          "functionDeclarations": [
+            {
+              "name": "fixture_echo",
+              "description": "Echo text for the parity fixture.",
+              "parametersJsonSchema": {
+                "type": "object",
+                "required": [
+                  "text"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ],
       "generationConfig": {
         "thinkingConfig": {
           "includeThoughts": true,

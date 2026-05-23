@@ -2,23 +2,18 @@
   "source": {
     "repository": "https://github.com/earendil-works/pi",
     "ref": "main",
-    "script": "/ts-parity/copilot-fixture.ts"
+    "script": "/ts-parity/openai-tools-fixture.ts"
   },
-  "provider": "github-copilot",
+  "provider": "openai",
   "auth": "api-key",
   "request": {
-    "url": "https://api.individual.githubcopilot.com/responses",
+    "url": "https://api.openai.com/v1/responses",
     "method": "POST",
     "headers": {
       "accept": "application/json",
       "authorization": "Bearer <redacted>",
       "content-type": "application/json",
-      "copilot-integration-id": "vscode-chat",
-      "editor-plugin-version": "copilot-chat/0.35.0",
-      "editor-version": "vscode/1.107.0",
-      "openai-intent": "conversation-edits",
-      "user-agent": "GitHubCopilotChat/0.35.0",
-      "x-initiator": "user",
+      "user-agent": "OpenAI/JS 6.26.0",
       "x-stainless-arch": "x64",
       "x-stainless-lang": "js",
       "x-stainless-os": "Linux",
@@ -46,6 +41,25 @@
       ],
       "stream": true,
       "store": false,
+      "tools": [
+        {
+          "type": "function",
+          "name": "fixture_echo",
+          "description": "Echo text for the parity fixture.",
+          "parameters": {
+            "type": "object",
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "text": {
+                "type": "string"
+              }
+            }
+          },
+          "strict": false
+        }
+      ],
       "reasoning": {
         "effort": "xhigh",
         "summary": "auto"
